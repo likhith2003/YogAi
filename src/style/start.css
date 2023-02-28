@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.my-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+}
+
+.start{
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url('../assests/startBg.jpeg');
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 25px;
+}
+.box > img{
+  width: 20vw;
+  height: 30vh;
+  border: 3px solid black;
+  border-radius: 25px;
+}
+.btn-group{
+  display: flex;
+  justify-content:center ;
+  margin-top: 10px;
+}
+.btn-group > button {
+  background-color: #b436c5; /* Green background */
+  border: 2px solid rgb(0, 0, 0); /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float:inline-start; /* Float the buttons side by side */
+  align-self: center;
+  border-radius: 20px;
+  /* margin-top: 500px;
+  margin-left: 350px; */
+}
+
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #b483d4;
+}
+
+.add >button{
+display: flex;
+justify-content: center;
+color: white;
+background-color: white; /* Green background */
+border: 2px solid rgb(0, 0, 0); /* Green border */
+border-radius: 20px;
+padding: 10px 24px; /* Some padding */
+  cursor: pointer; /*Pointer/hand icon */
+  float:inline-start; /* Float the buttons side by side */
+  align-self: center;
+}
+
+.add button:hover{
+  background-color:aliceblue;
+  color: black;
+}
