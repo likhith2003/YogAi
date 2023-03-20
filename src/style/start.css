@@ -71,19 +71,23 @@ code {
 }
 
 .add >button{
-display: flex;
-justify-content: center;
-color: white;
-background-color: white; /* Green background */
-border: 2px solid rgb(0, 0, 0); /* Green border */
-border-radius: 20px;
-padding: 10px 24px; /* Some padding */
-  cursor: pointer; /*Pointer/hand icon */
-  float:inline-start; /* Float the buttons side by side */
-  align-self: center;
+ display: flex;
+ justify-content: center;
+ color: white;
+ background-color: white; /* Green background */
+ border: 2px solid rgb(0, 0, 0); /* Green border */
+ border-radius: 20px;
+ padding: 10px 24px; /* Some padding */
+ cursor: pointer; /*Pointer/hand icon */
+ float:inline-start; /* Float the buttons side by side */
+ align-self: center;
 }
 
 .add button:hover{
   background-color:aliceblue;
   color: black;
+}
+
+.button{
+  margin-top: 80px;
 }

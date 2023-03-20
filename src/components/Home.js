@@ -5,9 +5,8 @@ import SignImg from './SignImg'
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 const Home = () => {
-
+    
     const history = useNavigate();  //useNavigate is a react hook.
-
     const [inpval,setInpval] = useState({
          First_name:"",
          Last_name:"",
@@ -22,8 +21,6 @@ const Home = () => {
         //console.log(e.target.value);
 
         const {value,name} =e.target; // we are doing object destructuring over here.
-        // we can also write const value=e.target.value (in place of the above line)
-
         //console.log(value,name);
 
         setInpval(()=>{

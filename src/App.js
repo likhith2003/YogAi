@@ -1,12 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Home from './components/Home';
+import Feature from'./components/Feature';
 import Login from './components/Login';
 import Start from './components/Start';
 import { Routes, Route, redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import {isObjectEmpty} from './helper/index'
 import Analysis from './components/Analysis';
+
 function App() {
   const [user,setUser]=useState({});
 
@@ -23,6 +25,7 @@ function App() {
          <Route path ='/login' element={<Login />} />
          <Route path ='/Start' element={<Start />} />
          <Route path ='/analysis' element={<Analysis />} />
+         <Route path ='/features' element={<Feature />}/>
       </Routes>
     </>
   );
