@@ -13,6 +13,11 @@ const Start = () => {
     navigate(path);
   }
 
+  const LogOut = () => {
+    let path =`/`;
+    navigate(path);
+  };
+
   const getThermal = () => {
     fetch("/checkthermal")
       .then((res) => console.log(res))
@@ -42,12 +47,6 @@ const Start = () => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err))
   }
-
-  const closeTab = () => {
-    window.opener = null;
-    window.open("", "_self");
-    window.close();
-  };
   
   return (
     <div className='start'>
@@ -105,7 +104,7 @@ const Start = () => {
 
         <div className='box'>
           <div className='start_btn-group'>
-            <button className='button' onClick={closeTab}>Exit</button>
+            <button className='button' onClick={()=>LogOut()}>Log Out</button>
           </div>
         </div>
 

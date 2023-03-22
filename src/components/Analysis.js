@@ -12,6 +12,11 @@ const Analysis = () => {
     navigate(path);
   }
 
+  const LogOut = () => {
+    let path =`/`;
+    navigate(path);
+  };
+
   const getTherm = () => {
     fetch("/displaytherm")
       .then((res) => console.log(res))
@@ -84,7 +89,7 @@ const Analysis = () => {
           </div>
           <div className='box'>
             <div className='btn-group'>
-              <button className='button'>Exit</button>
+              <button className='button' onClick={()=>LogOut()}>Log Out</button>
             </div>
           </div>
         </div>
