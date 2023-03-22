@@ -21,11 +21,16 @@ code {
 }
 
 .start{
-  height: 100vh;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-image: url('../assests/startBg.jpeg');
+}
+.start_functionbox{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-image: url('../assests/startBg.jpeg');
 }
 .box{
   display: flex;
@@ -34,17 +39,17 @@ code {
   border-radius: 25px;
 }
 .box > img{
-  width: 20vw;
-  height: 30vh;
-  border: 3px solid black;
+  width: 1vw;
+  height: 5vh;
+  border: 2px solid black;
   border-radius: 25px;
 }
-.btn-group{
+.start_btn-group{
   display: flex;
   justify-content:center ;
   margin-top: 10px;
 }
-.btn-group > button {
+.start_btn-group > button {
   background-color: #b436c5; /* Green background */
   border: 2px solid rgb(0, 0, 0); /* Green border */
   color: white; /* White text */
@@ -59,14 +64,14 @@ code {
 
 
 /* Clear floats (clearfix hack) */
-.btn-group:after {
+.start_btn-group:after {
   content: "";
   clear: both;
   display: table;
 }
 
 /* Add a background color on hover */
-.btn-group button:hover {
+.start_btn-group button:hover {
   background-color: #b483d4;
 }
 
