@@ -23,9 +23,9 @@ function App() {
          <Route path ='/' element={<Home />} />
          {/* forward slash in path shows homepage */}
          <Route path ='/login' element={<Login />} />
-         <Route path ='/Start' element={<Start />} />
+         <Route path ='/start' element={<Start />} />
          <Route path ='/analysis' element={<Analysis />} />
-         <Route path ='/features' element={<Feature />}/>
+         {/* <Route path ='/features' element={<Feature />}/> */}
       </Routes>
     </>
   );
