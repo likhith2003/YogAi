@@ -28,7 +28,6 @@ const Login = () => {
             }
         })
     }
-
     const addData = (e) => {
         e.preventDefault();
 

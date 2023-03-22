@@ -1,7 +1,7 @@
 import React from 'react'
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import '../style/Start.css'
+import '../style/start.css'
 import { useNavigate } from 'react-router-dom';
 
 
