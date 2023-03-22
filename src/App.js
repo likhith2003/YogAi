@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Home from './components/Home';
-import Feature from'./components/Feature';
 import Login from './components/Login';
 import Start from './components/Start';
 import { Routes, Route, redirect } from 'react-router-dom';
