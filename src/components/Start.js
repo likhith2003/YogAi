@@ -8,13 +8,14 @@ import { useNavigate } from 'react-router-dom';
 const Start = () => {
 
   let navigate = useNavigate();
+  
   const routeChange = () => {
     let path = `/analysis`;
     navigate(path);
   }
 
   const LogOut = () => {
-    let path =`/`;
+    let path = `/`;
     navigate(path);
   };
 
@@ -47,67 +48,85 @@ const Start = () => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err))
   }
-  
+
   return (
     <div className='start'>
+      <div className='boxes'>
+        <div className='start_btn-group5'>
+          <button className='button' onClick={() => getStart()}>Start the session</button>
+        </div>
+      </div>
+
       <div className='start_functionbox'>
-        <div className='box'>
-          <img src="https://image.emojipng.com/50/4780050.jpg" alt="Check your thermal here" />
-          <div className='start_btn-group'>
-            <Tippy content="Click here to begin your thermal analysis. Allow Thermal Imaging to recognize and categorize your posture as right or fallace.Happy Yoga time">
+        <div className='boxes'>
+          <img src={require("../assets/checkthermal.jpg")} alt="Check your thermal here" />
+          <div className='start_btn-group1'>
+            <Tippy content="Begin your thermal analysis. Happy Yoga time.">
               <button onClick={() => getThermal()}>Check Thermal</button>
-              {/* we can also use this: <button onClick={<NavLink to={"/"}></NavLink>}></button> */}
             </Tippy>
+          </div>
+          <p></p>
+          <div className='info1'>
+            <li>Thermography</li>
+            <li>Thermal Infrared</li>
+            <li>Thermal energy from skin surface</li>
           </div>
         </div>
 
-        <div className='box'>
-          <img src="https://indatalabs.com/wp-content/uploads/2020/10/human-activity-recognition-fitness-app.jpg" alt="Check your radar here" />
-          <div className='start_btn-group'>
-            <Tippy content="Click here to begin your radar analysis.Detect postural changes to help predict and prevent fallacious yoga postures.Happy Yoga time">
+        <div className='boxes'>
+          <img src={require("../assets/checkradar.jpg")} alt="Check your radar here" />
+          <div className='start_btn-group2'>
+            <Tippy content="Begin your radar analysis. Happy Yoga time.">
               <button onClick={() => getRadar()}>Check Radar</button>
             </Tippy>
           </div>
+          <p></p>
+          <div className='info2'>
+            <li>Object Position</li>
+            <li>Motion characteristics</li>
+            <li>Motion Trajectory</li>
+          </div>
         </div>
 
 
-        <div className='box'>
-          <img src="https://images.squarespace-cdn.com/content/v1/57a958a4f7e0abfd89d44efb/1477505543749-CZK02PYV9ZT5KK6KDSIO/visual_640x320.jpg?format=750w" alt="Check your visual here" />
-          <div className='start_btn-group'>
-            <Tippy content="Click here to begin your visual analysis.Start the camera and capture your yoga posture.Happy Yoga time.">
+        <div className='boxes'>
+          <img src={require("../assets/checkvisual.jpg")} alt="Check your visual here" />
+          {/* <img src={require("../assets/checkvisual2.jpg")} alt="Check your visual here" /> */}
+          <div className='start_btn-group3'>
+            <Tippy content="Begin your visual analysis. Happy Yoga time.">
               <button onClick={() => getVisual()}>Check Visual</button>
             </Tippy>
           </div>
+          <p></p>
+          <div className='info3'>
+            <li>Visual structure and elements</li>
+            <li>Explanation and decription</li>
+            <li>Color,line,texture,and scale</li>
+          </div>
         </div>
 
-        <div className='box'>
-          <img src="https://img.freepik.com/premium-vector/cute-little-boy-doing-gymnastic-fitness-exercises-practicing-yoga-pose-mat-indoor-home_535862-120.jpg?w=2000" alt="Check your visual here" />
-          <div className='start_btn-group'>
-            <Tippy content="Click here to begin your pressure mat analysis..Happy Yoga time.">
+        <div className='boxes'>
+          <img src={require("../assets/checkpressure.jpeg")} alt="Check your visual here" />
+          <div className='start_btn-group4'>
+            <Tippy content="Begin your pressure mat analysis. Happy Yoga time.">
               <button onClick={() => getPressure()}>Check Pressure Mat</button>
             </Tippy>
           </div>
+          <p></p>
+          <div className='info4'>
+            <li>Postural stability</li>
+            <li>Pressure offloading</li>
+            <li>Quantifiable pressure data</li>
+          </div>
         </div>
       </div>
-      <div style={{display:'flex',flexDirection:'row',alignItems:'flex-start',justifyContent:'space-evenly'}}>
-        <div className='box'>
-          <div className='start_btn-group'>
+
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-evenly' }}>
+        <div className='boxes'>
+          <div className='start_btn-group5'>
             <button className='button' onClick={routeChange}>Move to Analysis section</button>
           </div>
         </div>
-
-        <div className='box'>
-          <div className='start_btn-group'>
-            <button className='button' onClick={()=>getStart()}>Start the session</button>
-          </div>
-        </div>
-
-        <div className='box'>
-          <div className='start_btn-group'>
-            <button className='button' onClick={()=>LogOut()}>Log Out</button>
-          </div>
-        </div>
-
       </div>
     </div>
   )

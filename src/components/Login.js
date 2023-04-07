@@ -74,22 +74,6 @@ const Login = () => {
         }
     }
 
-    //Implementing the eye-icon to show/hide password
-    // const ShowAndHidePassword=()=>{
-    //     const [passwordType, setPasswordType] = useState("password");
-    //     const [passwordInput, setPasswordInput] = useState("");
-    //     const handlePasswordChange =(evnt)=>{
-    //         setPasswordInput(evnt.target.value);
-    //     }
-    //     const togglePassword =()=>{
-    //       if(passwordType==="password")
-    //       {
-    //        setPasswordType("text")
-    //        return;
-    //       }
-    //       setPasswordType("password")
-    //     }
-
     return (
         <>
             <div className="container mt-2">
@@ -109,14 +93,7 @@ const Login = () => {
                             <Form.Group className="mb-3 col-lg-6" controlId="formBasicPassword">
                                 {/* <Form.Label>Password</Form.Label> */}
                                 <Form.Control type="password" name='password' onChange={getdata} placeholder="Password" />
-                     {/* <button className="btn btn-outline-primary" onClick={togglePassword}>
-                     { passwordType==="password"? <i className="bi bi-eye-slash"></i> :<i className="bi bi-eye"></i> }
-                     </button> */}
                             </Form.Group>
-
-                            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                 <Form.Check type="checkbox" label="Check me out" /> 
-                            </Form.Group> */}
 
                             <Button variant="primary" type="submit" onClick={addData} className='col-lg-6' style={{ background: "purple" }}>
                                 Submit
