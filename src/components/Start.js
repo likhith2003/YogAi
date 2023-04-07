@@ -91,7 +91,6 @@ const Start = () => {
 
         <div className='boxes'>
           <img src={require("../assets/checkvisual.jpg")} alt="Check your visual here" />
-          {/* <img src={require("../assets/checkvisual2.jpg")} alt="Check your visual here" /> */}
           <div className='start_btn-group3'>
             <Tippy content="Begin your visual analysis. Happy Yoga time.">
               <button onClick={() => getVisual()}>Check Visual</button>
