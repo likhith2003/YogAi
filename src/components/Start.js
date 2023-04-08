@@ -120,7 +120,7 @@ const Start = () => {
         </div>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-evenly' }}>
+        <div style={{display:'flex',justifyContent:"space-evenly",height:'25vh',alignItems:'flex-start'}}>
         <div className='boxes'>
           <div className='start_btn-group5'>
             <button className='button' onClick={routeChange}>Move to Analysis section</button>
