@@ -46,52 +46,69 @@ const Analysis = () => {
       <div className='analysis_start'>
 
         <div className='box'>
-          <img src="https://iiif.wellcomecollection.org/image/N0037647/full/300,/0/default.jpg" alt="Analyze your visual here" />
-          <div className='btn-group'>
+          <img src={require("../assets/analyzethermal.png")} alt="Analyze your visual here" />
+          <div className='btn-group1'>
             <Tippy content="Click here to see your thermal analysis.">
               <button onClick={() => getTherm()}>Analyze Thermal</button>
             </Tippy>
           </div>
-        </div>
-
-        <div className='box'>
-          <img src="https://cdn.dribbble.com/users/143127/screenshots/2971522/media/210351018fc8837fce622ec4112ad9c8.jpg?compress=1&resize=400x300" alt="Analyze your radar here" />
-          <div className='btn-group'>
-            <Tippy content="Click here to see your radar analysis.">
-              <button onClick={() => getRad()}>Analyze Radar</button>
-            </Tippy>
+          <p></p>
+          <div className='infor1'>
+            <li>Heart rate during yoga</li>
+             <li>Thermal responses to yoga</li> 
           </div>
         </div>
 
         <div className='box'>
-          <img src="https://i0.wp.com/www.yogabasics.com/yogabasics2017/wp-content/uploads/2020/01/Yoga-Poses-for-Beginners.jpg" alt="Analyze your thermal here" />
-          <div className='btn-group'>
+          <img src={require("../assets/analyzeradar.jpg")} alt="Analyze your radar here" />
+          <div className='btn-group2'>
+            <Tippy content="Click here to see your radar analysis.">
+              <button onClick={()=> getRad()}>Analyze Radar</button>
+            </Tippy>
+          </div>
+          <p></p>
+          <div className='infor2'>
+            <li>Sensors or vision-based techniques</li>
+            <li>Identification of movements</li>
+          </div>
+        </div>
+
+        <div className='box'>
+          <img src={require("../assets/analyzeposture.jpg")} alt="Analyze your thermal here" />
+          <div className='btn-group3'>
             <Tippy content="Click here to see your posture analysis.">
               <button onClick={() => getPos()}>Analyze Posture</button>
             </Tippy>
           </div>
+          <p></p>
+          <div className='infor3'>
+            <li>Posture recognition, evaluation</li>
+            <li>Camera-based method</li>
+          </div>
         </div>
 
         <div className='box'>
-          <img src="https://media.istockphoto.com/id/1225266726/vector/yoga-studios-streaming-online-classes-girl-watching-online-sport-tutorials-on-a-laptop-and.jpg?s=612x612&w=is&k=20&c=Yh7G7kNvQ2wEOjdzN0CXE2-cUb0LECl_ognQ367qiII=" alt="Check your pressure mat here" />
-          <div className='btn-group'>
+          <img src={require("../assets/analyzepressure.jpg")} alt="Check your pressure mat here" />
+          <div className='btn-group4'>
             <Tippy content="Click here to see your pressure mat analysis.">
               <button onClick={() => getPressMat()}>Analyze Pressure Mat</button>
             </Tippy>
           </div>
+          <p></p>
+          <div className='infor4'>
+            <li>Yoga posture database capture</li>
+            <li>Bluetooth-based data transfer</li>
+          </div>
         </div>
       </div>
+
       <div style={{display:'flex',justifyContent:"space-evenly",height:'25vh',alignItems:'flex-start'}}>
         <div className='box'>
-            <div className='btn-group'>
-              <button className='button' onClick={routeChange}>Return to Start Page</button>
+            <div className='btn-group5'>
+              <button className='button' onClick={routeChange}>Return to Start section</button>
             </div>
           </div>
-          <div className='box'>
-            <div className='btn-group'>
-              <button className='button' onClick={()=>LogOut()}>Log Out</button>
-            </div>
-          </div>
+
         </div>
     </div>
   )
