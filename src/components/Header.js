@@ -1,26 +1,15 @@
-import React, { useState,useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
 
-const Header = () => {
-
+const Header = ({user,setUser}) => {
     const history = useNavigate();  //useNavigate is a react hook.
 
-    const {user,setUser}=useState();
-
-    function getUserFromLocal(){
-        return JSON.parse(localStorage.getItem("user"));
-    }
-    useEffect(()=>{
-        const getUsers = async () => {
-            const userData = await getUserFromLocal();
-            setUser(userData);
-          };    
-        },[])
     const handleClick=()=>{
-        if(user&&user.length!=0)localStorage.removeItem("user");
+        console.log("user",user)
+        if(user&&user.length!==0)localStorage.removeItem('user');
+        setUser("")
         history("/login");
     }
     return (
@@ -31,7 +20,7 @@ const Header = () => {
                     <Navbar.Brand>Welcome to AiYogi</Navbar.Brand>
                     </div>
                     <div className="ms-auto">
-                    <Navbar.Brand onClick={handleClick}>{!user?"Log In":"Log out"}</Navbar.Brand>
+                    <Navbar.Brand style ={{cursor:"pointer"}}onClick={handleClick}>{!user?"Log In":"Log out"}</Navbar.Brand>
                     </div>
                 </Container>
             </Navbar>
