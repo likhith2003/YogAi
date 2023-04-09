@@ -25,43 +25,121 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-image: url('../assests/startBg.jpeg');
+  /* background-image: url('../assets/blue.jpg'); */
+  background-color: #1c2336;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 .start_functionbox{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.box{
+.boxes{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  border-radius: 25px;
+  /* justify-content: space-evenly;
+  border-radius: 25px; */
 }
-.box > img{
-  width: 1vw;
-  height: 5vh;
+.boxes > img{
+  width: 15vw;
+  height: 25vh;
   border: 2px solid black;
   border-radius: 25px;
 }
-.start_btn-group{
+.start_btn-group1{
   display: flex;
   justify-content:center ;
   margin-top: 10px;
 }
-.start_btn-group > button {
-  background-color: #b436c5; /* Green background */
-  border: 2px solid rgb(0, 0, 0); /* Green border */
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
+.start_btn-group1 > button {
+  background-color:  #feb92a;
+  border: 2px solid rgb(0, 0, 0); 
+  color: white;
+  padding: 10px 24px; 
+  cursor: pointer; 
   float:inline-start; /* Float the buttons side by side */
   align-self: center;
   border-radius: 20px;
-  /* margin-top: 500px;
-  margin-left: 350px; */
+  font-size: 2.1ch;
+  font-weight: 500;
 }
 
+.start_btn-group2{
+  display: flex;
+  justify-content:center ;
+  margin-top: 10px;
+}
+.start_btn-group2 > button {
+  background-color:  #0fc3a5;
+  border: 2px solid rgb(0, 0, 0); 
+  color: white;
+  padding: 10px 24px; 
+  cursor: pointer; 
+  float:inline-start; /* Float the buttons side by side */
+  align-self: center;
+  border-radius: 20px;
+  font-size: 2.1ch;
+  font-weight: 500;
+}
+
+.start_btn-group3{
+  display: flex;
+  justify-content:center ;
+  margin-top: 10px;
+}
+.start_btn-group3 > button {
+  /* background-color: #58afe1; */
+  background-color:  #fe3d75;
+  border: 2px solid rgb(0, 0, 0); 
+  color: white;
+  padding: 10px 24px; 
+  cursor: pointer; 
+  float:inline-start; /* Float the buttons side by side */
+  align-self: center;
+  border-radius: 20px;
+  font-size: 2.1ch;
+  font-weight: 500;
+}
+
+.start_btn-group4{
+  display: flex;
+  justify-content:center ;
+  margin-top: 10px;
+}
+.start_btn-group4 > button {
+  /* background-color: #58afe1; */
+  background-color: #f57017;
+  border: 2px solid rgb(0, 0, 0); 
+  color: white;
+  padding: 10px 24px; 
+  cursor: pointer; 
+  float:inline-start; /* Float the buttons side by side */
+  align-self: center;
+  border-radius: 20px;
+  font-size: 2.1ch;
+  font-weight: 500;
+}
+
+.start_btn-group5{
+  display: flex;
+  justify-content:center ;
+  margin-top: 10px;
+}
+.start_btn-group5 > button {
+  background-color: #41D5EA;
+  border: 2px solid rgb(0, 0, 0); 
+  color: black;
+  padding: 10px 24px; 
+  cursor: pointer; 
+  float:inline-start; /* Float the buttons side by side */
+  align-self: center;
+  border-radius: 20px;
+  font-size: 2.1ch;
+  font-weight: 500;
+}
 
 /* Clear floats (clearfix hack) */
 .start_btn-group:after {
@@ -70,29 +148,61 @@ code {
   display: table;
 }
 
-/* Add a background color on hover */
-.start_btn-group button:hover {
-  background-color: #b483d4;
+/* changes in the button on hover */
+.start_btn-group1 button:hover {
+  font-size: 2.1ch;
+  font-weight: 800;
 }
 
-.add >button{
- display: flex;
- justify-content: center;
- color: white;
- background-color: white; /* Green background */
- border: 2px solid rgb(0, 0, 0); /* Green border */
- border-radius: 20px;
- padding: 10px 24px; /* Some padding */
- cursor: pointer; /*Pointer/hand icon */
- float:inline-start; /* Float the buttons side by side */
- align-self: center;
+.start_btn-group2 button:hover {
+ 
+  font-size: 2.1ch;
+  font-weight: 800;
 }
 
-.add button:hover{
-  background-color:aliceblue;
-  color: black;
+.start_btn-group3 button:hover {
+ 
+  font-size: 2.1ch;
+  font-weight: 800;
+}
+.start_btn-group4 button:hover {
+ 
+  font-size: 2.1ch;
+  font-weight: 800;
+}
+
+.start_btn-group5 button:hover {
+ 
+  font-size: 2.1ch;
+  font-weight: 800;
 }
 
 .button{
   margin-top: 80px;
 }
+.box > div{
+  margin: 10px auto;
+}
+.info1{
+  color:  #feb92a;
+  font-size: 1.9ch;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.info2{
+  color:  #0fc3a5;
+  font-size: 1.9ch;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.info3{
+  color:  #fe3d75;
+  font-size: 1.9ch;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.info4{
+  color: #f57017;
+  font-size: 1.9ch;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* text-align: center; */
+    display: inline-block;
+    /* text-align: left;*/
+} 

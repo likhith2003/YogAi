@@ -4,13 +4,14 @@ import Button from 'react-bootstrap/Button'
 import SignImg from './SignImg'
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { baseUrl } from '../assets/BaseUrl'
 
 const Login = () => {
 
     const history = useNavigate();  //useNavigate is a react hook.
 
     const [inpval, setInpval] = useState({
-        Email_Id: "",
+        email: "",
         password: ""
     })
 
@@ -31,17 +32,20 @@ const Login = () => {
 
     const addData = (e) => {
         e.preventDefault();
-
-        const getuserArr = localStorage.getItem("useryoutube")
+        const getuserArr=JSON.parse(localStorage.getItem("user"))
+        if(getuserArr?.token){
+            history("/start")
+        }
         console.log(getuserArr)
 
         //console.log(inpval);
-        const { Email_Id, password } = inpval;
+        const { email, password } = inpval;
 
-        if (Email_Id === "") {
+        ///replace lower if else cases with regex expression 
+        if (email === "") {
             alert("Email field is required !")
         }
-        else if (!Email_Id.includes("@")) {
+        else if (!email.includes("@")) {
             alert("Email Address not valid! Please enter valid Email Address.")
         }
         else if (password === "") {
@@ -51,44 +55,40 @@ const Login = () => {
             alert("Password length should be greater than 8")
         }
         else {
-            // localStorage.setItem("useryoutube", JSON.stringify([...data, inpval])); ye wala line of code sign up page mein run ho rha hai
-            //jo bhi data hai, usko JSON ke format mein store krwayenge
-            if (getuserArr && getuserArr.length) {
-                const userdata = JSON.parse(getuserArr);  //user data is an array of an object. Go to web page and inspect over there.
-                // console.log(userdata)
-                // in the  line below, el= element and k=index number
-                const userlogin = userdata.filter((el, k) => {
-                    return el.Email_Id === Email_Id && el.password === password
-                });
-                console.log(userlogin)   //if we enter an username and password which is already associated with an account on the website, this line prints 
-                // the other details such as first_name, Last_name.
-                // However, if there is no account with those credentials, the above line prints an empty array.
 
-                if (userlogin.length === 0) {
-                    alert("Invalid Details !")
-                } else {
-                    console.log("User Login Successul !")
-                    history("/Start")        //if details entered are correct, re-direct the user to start page after clicking on the submit button
-                }
-            }
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                }),
+                redirect: 'follow'
+            };
+            fetch(baseUrl + "/login", requestOptions)
+                .then((response) => response.json())
+                .then((res) => {
+                    if (res?.token) {
+                        localStorage.setItem("user", JSON.stringify({...{
+                            email: email,
+                            password :password,
+                        }, token:res.token}));  
+                        history("/start");
+                    }
+                })
+                .catch(error =>{ 
+                    alert("Invalid Credentials")
+                    console.log('error', error)}
+                );
         }
     }
 
-    //Implementing the eye-icon to show/hide password
-    // const ShowAndHidePassword=()=>{
-    //     const [passwordType, setPasswordType] = useState("password");
-    //     const [passwordInput, setPasswordInput] = useState("");
-    //     const handlePasswordChange =(evnt)=>{
-    //         setPasswordInput(evnt.target.value);
-    //     }
-    //     const togglePassword =()=>{
-    //       if(passwordType==="password")
-    //       {
-    //        setPasswordType("text")
-    //        return;
-    //       }
-    //       setPasswordType("password")
-    //     }
+    //GET and POST method for HTTP requests.
+    //GET is used to request data from a specified resource.
+    //POST is used to send data to a server to create/update a resource.
 
     return (
         <>
@@ -99,24 +99,16 @@ const Login = () => {
                         <h3 className='text-center col-lg-6' style={{ color: "purple" }}>Log In</h3>
                         <Form>
                             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-                                {/* <Form.Label>Email address</Form.Label> */}
-                                <Form.Control type="email" name='Email_Id' onChange={getdata} placeholder="Email Id" />
+
+                                <Form.Control type="email" name='email' onChange={getdata} placeholder="Email Id" />
                                 <Form.Text className="text-muted">
-                                    {/* //We'll never share your email with anyone else. */}
+
                                 </Form.Text>
                             </Form.Group>
 
                             <Form.Group className="mb-3 col-lg-6" controlId="formBasicPassword">
-                                {/* <Form.Label>Password</Form.Label> */}
                                 <Form.Control type="password" name='password' onChange={getdata} placeholder="Password" />
-                     {/* <button className="btn btn-outline-primary" onClick={togglePassword}>
-                     { passwordType==="password"? <i className="bi bi-eye-slash"></i> :<i className="bi bi-eye"></i> }
-                     </button> */}
                             </Form.Group>
-
-                            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                 <Form.Check type="checkbox" label="Check me out" /> 
-                            </Form.Group> */}
 
                             <Button variant="primary" type="submit" onClick={addData} className='col-lg-6' style={{ background: "purple" }}>
                                 Submit
