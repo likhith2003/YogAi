@@ -20,7 +20,6 @@ const Start = () => {
 
   const LogOut = () => {
     let path = `/`;
-    let path = `/`;
     navigate(path);
   };
 
