@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { baseUrl } from '../assets/BaseUrl';
 
 const Start = () => {
-  const [loggInStatus,setLogginStatus]=useState();
+  let [loggInStatus,setLogginStatus]=useState();
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   
@@ -59,7 +59,6 @@ const Start = () => {
         const res=await fetch(baseUrl+"/start", {
           method: 'POST',
           headers: myHeaders,
-          body: {},
           redirect: 'follow'
         })
       loggInStatus=res;
@@ -75,14 +74,15 @@ const Start = () => {
   useEffect(()=>{
     (async () => {
       const userData = await getUserFromLocal();
-      console.log(userData);
-      if(!userData || userData.length==0) 
-        navigate("/login");
+      console.log("userData",userData);
+      if(!userData || userData.length===0) {
+        console.log("empty userData"); navigate("/login");}
       else{
         await checkUser(userData?.token);
-        if(!loggInStatus)
-          navigate("/login");}
-    })(); 
+        console.log("loggInStatus",loggInStatus)
+        if(!loggInStatus)navigate("/login");
+        }
+      })(); 
   },[])
   //empty depen only called once the page renders in this case.
   

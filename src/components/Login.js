@@ -75,9 +75,9 @@ const Login = () => {
                             email: email,
                             password :password,
                         }, token:res.token}));  
-                        history("/start");
                     }
                 })
+                .then(()=>history("/start"))
                 .catch(error =>{ 
                     alert("Invalid Credentials")
                     console.log('error', error)}
